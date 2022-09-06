@@ -88,7 +88,7 @@ void Test1()
 {
     int i;
 
-    lista_seq *lista = new lista_seq();
+    lista_seq *lista = new lista_seq(10);
 
     lista->pushData(1, 23);
     lista->pushData(2, 25);
@@ -126,11 +126,12 @@ void Test1()
 
     cout << endl;
     lista->listarData();
+    delete lista;
 }
 
 void test2()
 {
-    lista_seq *lista = new lista_seq();
+    lista_seq *lista = new lista_seq(10);
 
 
     cout << "A lista suporta: " << lista->TamTotal() << " Elemento(s)" << endl;
@@ -160,11 +161,12 @@ void test2()
     statusLista(lista);
     lista->listarData();
     cout << endl;
+    delete lista;
 }
 
 void test3()
 {
-    lista_seq *lista = new lista_seq();
+    lista_seq *lista = new lista_seq(10);
 
     lista->pushData(1, 23);
     lista->pushData(2, 25);
@@ -178,6 +180,8 @@ void test3()
     lista->pushData(10, 50);
 
     modData(lista);
+
+    delete lista;
 }
 
 int main(int argc, char *argv[])

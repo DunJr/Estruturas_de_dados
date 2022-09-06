@@ -1,8 +1,8 @@
 #include "lista_seq.hpp"
 
-lista_seq::lista_seq()
+lista_seq::lista_seq(int tam)
 {
-    data[10] = {0};
+    data[tam] = {0};
     tamAt = 0;
     tamMax = 10;
 }

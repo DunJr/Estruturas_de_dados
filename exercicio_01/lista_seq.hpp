@@ -10,7 +10,7 @@ private:
     int tamAt = 0;
     int tamMax = 10;
 public:
-    lista_seq();
+    lista_seq(int tam);
 
     int getData(int i);
     int getTamAt();
