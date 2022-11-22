@@ -171,13 +171,10 @@ int grafo::caminhoB(int a, int b){
 
 
     int mai, men;
-    if(distancia[a] > (distancia[b])){
-        mai = a;
-        men = b;
-    }else{
-        mai = b;
-        men = a;
-    }
+    
+    mai = a;
+    men = b;
+
     //dis = distancia[mai];
 
     while (pai[mai] > -2){
@@ -190,40 +187,15 @@ int grafo::caminhoB(int a, int b){
         mai = pai[mai];
     }
 
-    if(!existe){
-        while (pai[men] > -2){
-            camAux.insert(camAux.begin(), men);
-            men = pai[men];
-        }
-        caminho.insert(caminho.begin(), mai);
-    }
+if(existe){
+    int size = caminho.size();
 
-    if(existe || (mai == men)){
-        int size = caminho.size();
-        if(distancia[a] > distancia[b]){
-            for(int i = size; i > 0; i--){
-                cout << caminho[i - 1] + 1 << "\t";
-            }
-            if(!existe){
-                for (int i = 0; i < camAux.size(); i++){
-                    cout << camAux[i] + 1 << "\t";
-                }
-            }
-            
-        }else{
-            if(!existe){
-                for(int i = camAux.size(); i > 0; i--){
-                    cout << camAux[i - 1] + 1 << "\t";
-                }
-            }
-            for(int i = 0; i < size; i++){
-                cout << caminho[i] + 1 << "\t";
-            }
-        }
-        
-        cout << endl;
-        return 0;
+    for(int i = size; i > 0; i--){
+        cout << caminho[i - 1] + 1 << "\t";
     }
+    cout << endl;
+    return 0;
+}
 
     return -3;
 
