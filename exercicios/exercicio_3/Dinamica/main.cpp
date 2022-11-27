@@ -51,6 +51,7 @@ void remNO(pilha *l)
         cout << "Dado removido: " << l->popIni() << endl;
         cout << "Digite algo para sair: ";
         cin >> s;
+        
     }
 }
 
@@ -122,7 +123,6 @@ int main()
 
     seletor(l);
 
-    delete (l);
 
     // std::shared_ptr<pilha> pilha = std::make_shared<pilha>();
 
